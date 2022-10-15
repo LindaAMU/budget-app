@@ -4,7 +4,7 @@ class CreateTransactions < ActiveRecord::Migration[7.0]
       t.string :reason
       t.date :date
       t.decimal :amount
-      t.enum :transaction_type
+      t.integer :transaction_type
       t.references :account, null: false, foreign_key: true
       t.references :categories, null: false, foreign_key: true
 
