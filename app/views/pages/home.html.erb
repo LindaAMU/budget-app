@@ -1,2 +1,12 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<div>
+  <div class="container">
+    <% if user_signed_in? %>
+      <%= link_to "Create new account", new_account_path %>
+    <% else %>
+      <%= link_to "Regístrate", new_user_registration_path, class: "btn" %>
+    <% end %>
+  </div>
+</div>
