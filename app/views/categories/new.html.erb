@@ -1,9 +1,4 @@
 <h1>Categories#new</h1>
 <p>Find me in app/views/categories/new.html.erb</p>
 
-
-<%= simple_form_for @category do |f| %>
-  <%= f.input :name, placeholder: "Add the category's name" %>
-  <%= f.input :category_type, placeholder: "Is an expenses or an income?", as: :select  %>
-  <%= f.button :submit, "Create Category" %>
-<% end %>
+<%= render "shared/category_form" %>
