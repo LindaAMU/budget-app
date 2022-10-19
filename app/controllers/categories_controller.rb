@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: %i[edit update destroy]
+  before_action :set_category, only: %i[edit update destroy type_converter]
   def index
    @categories = Category.all
   end
