@@ -1,4 +1,8 @@
 class AccountsController < ApplicationController
+  def index
+    @accounts = Account.all.where(user_id: current_user.id)
+  end
+
   def new
     @account = Account.new
   end
@@ -7,9 +11,6 @@ class AccountsController < ApplicationController
   end
 
   def destroy
-  end
-
-  def index
   end
 
   def edit
