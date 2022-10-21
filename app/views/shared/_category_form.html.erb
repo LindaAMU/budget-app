@@ -1,0 +1,5 @@
+<%= simple_form_for @category do |f| %>
+  <%= f.input :name, placeholder: "Add the category's name" %>
+  <%= f.input :category_type, placeholder: "Is an expenses or an income?", collection: Category.category_types %>
+  <%= f.button :submit, "Create Category" %>
+<% end %>

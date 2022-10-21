@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :set_category, only: %i[edit update destroy type_converter]
   def index
     @categories = Category.all
   end
@@ -18,6 +19,8 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
+    @category.destroy
+    redirect_to categories_path, status: :see_other
   end
 
   def edit
@@ -28,7 +31,13 @@ class CategoriesController < ApplicationController
     redirect_to categories_path
   end
 
+  private
+
   def category_params
     params.require(:category).permit(:name, :category_type)
+  end
+
+  def set_category
+    @category = Category.find(params[:id])
   end
 end
