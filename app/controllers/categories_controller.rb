@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[edit update destroy type_converter]
   def index
-   @categories = Category.all
+   @categories = Category.all.where(user_id: current_user.id)
   end
 
   def new
