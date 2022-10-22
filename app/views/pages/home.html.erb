@@ -17,13 +17,20 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            Imagen 1
+            Suma de todos los incomes:
+            <% total_incomes = 0 %>
+            <% Transaction.all.where(user_id: current_user.id, transaction_type: 0).each { |transaction| total_incomes += transaction.amount }  %>
+            <%= total_incomes %>
+
           </div>
           <div class="col">
-            Imagen 2
+            Suma de todos los expense:
+            <% total_expense = 0 %>
+            <% Transaction.all.where(user_id: current_user.id, transaction_type: 1).each { |transaction| total_expense += transaction.amount }  %>
+            <%= total_expense %>
           </div>
           <div class="col">
-            Imagen 3
+            Disponible: <%= total_incomes - total_expense %>
           </div>
         </div>
         <div class="row">

@@ -13,6 +13,8 @@ class TransactionsController < ApplicationController
     @transaction.user = current_user
     @transaction.category = Category.find(params[:transaction][:category_id])
     @transaction.account = Account.find(params[:transaction][:account_id])
+    @transaction.account.amount -= @transaction.amount
+
     if @transaction.save
       redirect_to transactions_path
     else
@@ -21,12 +23,16 @@ class TransactionsController < ApplicationController
   end
 
   def destroy
+    @transaction.destroy
+    redirect_to categories_path, status: :see_other
   end
 
   def edit
   end
 
   def update
+    @transaction.update(transaction_params)
+    redirect_to categories_path
   end
 
   private
