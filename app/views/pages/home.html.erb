@@ -35,7 +35,11 @@
         </div>
         <div class="row">
           <div class="col">
-            Imagen 4
+            Tip:
+            <% Tip.all %>
+            <% tip = tips.sample %>
+            <%= tip.title %>
+            <%= tip.message %>
           </div>
           <div class="col">
             Imagen 5

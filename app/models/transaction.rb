@@ -8,5 +8,5 @@ class Transaction < ApplicationRecord
   validates :date, presence: true
   validates :amount, presence: true, numericality: { greater_than: 0 }
   validates :account_id, presence: true
-  validates :categories_id, presence: true
+  validates :category_id, presence: true
 end
