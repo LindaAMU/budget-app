@@ -1,0 +1,8 @@
+<div class="container d-flex justify-content-center">
+  <%= simple_form_for @account do |f| %>
+    <%= f.input :name, placeholder: "Account Name" %>
+    <%= f.input :amount, placeholder:  "Add Amount"  %>
+    <%= f.select :account_type, Account.account_types.values.map { |value| value.to_i }, placeholder: "Account's Type"  %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
