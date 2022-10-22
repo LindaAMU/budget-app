@@ -1,9 +1,9 @@
 <%= simple_form_for @transaction do |f| %>
-  <%= f.input :transaction_type, placeholder: "Transaction's Type", collection: Transaction.transaction_types.symbolize_keys.keys%>
+  <%= f.input :transaction_type, placeholder: "Transaction's Type", collection: Transaction.transaction_types.symbolize_keys.keys %>
   <%= f.input :reason, placeholder: "Reason of payment" %>
   <%= f.input :date, placeholder:  "Date" %>
   <%= f.input :amount, placeholder:  "Add Amount" %>
-  <%= f.input :transaction_type, placeholder: "Transaction's Type", collection: Transaction.transaction_types.symbolize_keys.keys%>
-  <%= f.input :transaction_type, placeholder: "Transaction's Type", collection: Transaction.transaction_types.symbolize_keys.keys%>
+  <%= f.input :account_id, placeholder: "Select account", collection: current_user.accounts %>
+  <%= f.input :category_id, placeholder: "Select category", collection: current_user.categories %>
   <%= f.button :submit %>
 <% end %>
