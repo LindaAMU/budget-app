@@ -1,2 +1,11 @@
 <h1>Transactions#index</h1>
 <p>Find me in app/views/transactions/index.html.erb</p>
+<% @transactions.each do |transaction| %>
+  <div class="container">
+    <p> <%= transaction.name %> is a <%= transaction.transaction_type %> </p>
+    <%= link_to "Edit", edit_transaction_path(transaction) %>
+    <%= link_to "Delete", transaction_path(transaction), data: { turbo_method: :delete } %>
+  </div>
+<% end %>
+
+<%= link_to "New transaction", new_transaction_path %>
