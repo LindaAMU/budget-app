@@ -1,0 +1,13 @@
+<h1><%= @user.full_name %></h1>
+<h2>aquí estoy</h2>
+<% @user.accounts.each do |a| %>
+<%= a.name %>
+<% end %>
+
+<% @user.categories.each do |c| %>
+<%= c.name %>
+<% end %>
+
+<% @user.transactions.each do |t| %>
+<%= t.reason %>
+<% end %>
