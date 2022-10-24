@@ -1,4 +1,12 @@
 <h1>Accounts#index</h1>
 <% @accounts.each do |account| %>
-  <%= account.account_type %>
+  <div class="mt-5 mb-5">
+    <p> <%= account.name %> </p>
+    <p> <%= account.account_type %> </p>
+    <p> <%= account.amount %> </p>
+    <%= link_to "Edit", edit_account_path(account) %>
+    <%= link_to "Delete", account_path(account), data: { turbo_method: :delete } %>
+  </div>
 <% end %>
+
+<%= link_to "New account", new_account_path %>
