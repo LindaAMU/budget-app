@@ -15,9 +15,15 @@ class TransactionsController < ApplicationController
     @account = Account.find(params[:transaction][:account_id])
     @transaction.account = @account
     if @transaction.save
-      @account.amount -= @transaction.amount
-      @account.save
-      redirect_to transactions_path
+      if @transaction.transaction_type == "expense"
+        @account.amount -= @transaction.amount
+        @account.save
+        redirect_to transactions_path
+      elsif @transaction.transaction_type == "income"
+        @account.amount += @transaction.amount
+        @account.save
+        redirect_to transactions_path
+      end
     else
       render :new, status: :unprocessable_entity
     end
