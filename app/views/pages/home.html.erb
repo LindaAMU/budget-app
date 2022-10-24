@@ -36,8 +36,8 @@
         <div class="row">
           <div class="col">
             Tip:
-            <% Tip.all %>
-            <% tip = tips.sample %>
+            <% tips = Tip.all %>
+            
             <%= tip.title %>
             <%= tip.message %>
           </div>

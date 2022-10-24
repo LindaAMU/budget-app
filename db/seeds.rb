@@ -10,7 +10,7 @@ puts "eliminando instancias"
 # Category.destroy_all
 # Transaction.destroy_all
 
-User.destroy_all
+# User.destroy_all
 Tip.destroy_all
 
 
