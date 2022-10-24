@@ -2,7 +2,7 @@
 <p>Find me in app/views/categories/index.html.erb</p>
 
 <% @categories.each do |category| %>
-  <div class="container">
+  <div class="container mt-3 mb-3">
     <p> <%= category.name %> is a <%= category.category_type %> </p>
     <%= link_to "Edit", edit_category_path(category) %>
     <%= link_to "Delete", category_path(category), data: { turbo_method: :delete } %>

@@ -12,8 +12,11 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.new(transaction_params)
     @transaction.user = current_user
     @transaction.category = Category.find(params[:transaction][:category_id])
-    @transaction.account = Account.find(params[:transaction][:account_id])
+    @account = Account.find(params[:transaction][:account_id])
+    @transaction.account = @account
     if @transaction.save
+      @account.amount -= @transaction.amount
+      @account.save
       redirect_to transactions_path
     else
       render :new, status: :unprocessable_entity
@@ -21,18 +24,22 @@ class TransactionsController < ApplicationController
   end
 
   def destroy
+    @transaction.destroy
+    redirect_to categories_path, status: :see_other
   end
 
   def edit
   end
 
   def update
+    @transaction.update(transaction_params)
+    redirect_to categories_path
   end
 
   private
 
   def transaction_params
-    params.require(:transaction).permit(:reason, :date, :amount, :transaction_type, :account_id, :categories_id)
+    params.require(:transaction).permit(:reason, :date, :amount, :transaction_type, :account_id, :category_id)
   end
 
   def set_transaction
