@@ -1,8 +1,12 @@
-<div class="container d-flex justify-content-center">
-  <%= simple_form_for @account do |f| %>
-    <%= f.input :name, placeholder: "Account Name" %>
-    <%= f.input :amount, placeholder:  "Add Amount"  %>
-    <%= f.input :account_type, placeholder: "Account's Type", collection: Account.account_types.symbolize_keys.keys%>
-    <%= f.button :submit %>
-  <% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-5">
+      <%= simple_form_for @account do |f| %>
+        <%= f.input :name, placeholder: "Account Name" %>
+        <%= f.input :amount, placeholder:  "Add Amount"  %>
+        <%= f.input :account_type, placeholder: "Account's Type", collection: Account.account_types.symbolize_keys.keys%>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
 </div>
