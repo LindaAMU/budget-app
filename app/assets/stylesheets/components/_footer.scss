@@ -1,0 +1,21 @@
+.footer {
+  background-color: $green;
+  height: 120px;
+  opacity: 0,8;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+
+.message {
+  height: 70%;
+  text-align: center;
+}
+
+.message img {
+  height: 70%;
+  margin: 0 auto;
+}

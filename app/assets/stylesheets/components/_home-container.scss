@@ -1,0 +1,25 @@
+.home-container {
+  background-color: $blue;
+  min-height: 100vh;
+  padding: 50px;
+}
+
+.home-text {
+  display: grid;
+  grid-template-columns: 500px;
+  grid-template-rows: 500px;
+  padding: 50px;
+}
+
+.home-text p {
+  color: $white;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 58px;
+  line-height: 71px;
+}
+
+.home-text img {
+  justify-content: space-around;
+}
