@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-5">
+    <div class="col-5 form-container ">
       <%= simple_form_for @account do |f| %>
         <%= f.input :name, placeholder: "Account Name" %>
         <%= f.input :amount, placeholder:  "Add Amount"  %>
         <%= f.input :account_type, placeholder: "Account's Type", collection: Account.account_types.symbolize_keys.keys%>
-        <%= f.button :submit %>
+        <%= f.button :submit, class: "btn-violet" %>
       <% end %>
     </div>
   </div>
