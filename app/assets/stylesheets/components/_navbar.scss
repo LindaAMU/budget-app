@@ -2,7 +2,7 @@
   justify-content: space-between;
   background: $blue;
   height: 80px;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid $white;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,16 +10,16 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 70px;
 }
 
 .nav-link {
-  color: white;
+  color: $white;
   font-weight: bold;
 }
 
 .dropdown-item {
-  color: white;
+  color: $white;
   font-weight: bold;
   margin: 0 20px;
 }
