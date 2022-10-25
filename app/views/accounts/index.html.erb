@@ -1,12 +1,27 @@
-<h1>Accounts#index</h1>
-<% @accounts.each do |account| %>
-  <div class="mt-5 mb-5">
-    <p> <%= account.name %> </p>
-    <p> <%= account.account_type %> </p>
-    <p> <%= account.amount %> </p>
-    <%= link_to "Edit", edit_account_path(account) %>
-    <%= link_to "Delete", account_path(account), data: { turbo_method: :delete } %>
-  </div>
-<% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>Accounts#index</h1>
 
-<%= link_to "New account", new_account_path %>
+    <table>
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Type</td>
+          <td>Amount</td>
+          <td>Action</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% @accounts.each do |account| %>
+          <tr>
+            <td><%= account.name %></td>
+            <td><%= account.account_type %></td>
+            <td><%= account.amount %></td>
+            <td><%= link_to "Edit", edit_account_path(account) %> or <%= link_to "Delete", account_path(account), data: { turbo_method: :delete } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to "New account", new_account_path %>
+  </div>
+</div>

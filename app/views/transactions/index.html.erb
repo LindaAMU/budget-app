@@ -1,12 +1,34 @@
-<h1>Transactions#index</h1>
-<p>Find me in app/views/transactions/index.html.erb</p>
+<div class="container">
+  <div class="row justify-content-center">
 
-<% @transactions.each do |transaction| %>
-  <div class="container mt-3 mb-3">
-    <p> <%= transaction.reason %> is a <%= transaction.transaction_type %>: <%= transaction.amount %> </p>
-    <%= link_to "Edit", edit_transaction_path(transaction) %>
-    <%= link_to "Delete", transaction_path(transaction), data: { turbo_method: :delete } %>
+    <h1>Transactions#index</h1>
+    <p>Find me in app/views/transactions/index.html.erb</p>
+
+    <table>
+      <thead>
+        <tr>
+          <td>Reason</td>
+          <td>Date</td>
+          <td>Amount</td>
+          <td>Account</td>
+          <td>Category</td>
+          <td>Action</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% @transactions.each do |transaction| %>
+          <tr>
+            <td><%= transaction.reason %></td>
+            <td><%= transaction.date %></td>
+            <td><%= transaction.amount %></td>
+            <td><%= transaction.account.account_type %></td>
+            <td><%= transaction.category.category_type %></td>
+            <td><%= link_to "Edit", edit_transaction_path(transaction) %> or <%= link_to "Delete", transaction_path(transaction), data: { turbo_method: :delete } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= link_to "New transaction", new_transaction_path %>
   </div>
-<% end %>
-
-<%= link_to "New transaction", new_transaction_path %>
+</div>
