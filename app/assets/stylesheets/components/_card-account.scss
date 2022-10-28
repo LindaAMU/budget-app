@@ -1,0 +1,13 @@
+.card-account-container {
+  display: grid;
+  grid-template-columns: repeat(4, 230px);
+  grid-template-rows: 150px;
+  column-gap: 30px;
+  overflow-x: auto;
+}
+
+.card-account {
+  background: linear-gradient(180deg, rgba(195, 153, 242, 0.82) 0%, rgba(217, 217, 217, 0.15) 100%);  margin: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
