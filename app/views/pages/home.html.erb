@@ -1,18 +1,23 @@
 <div class="banner">
   <div class="home-container">
     <div class="home-text">
-      <p>Take better control of your finances and achieve the savings you so desire!</p>
-      <!-- <p>
-      Tip:
-      <% tips = Tip.all %>
-      <% tip = tips.sample %>
-      <%= tip.title %>:
-      <%= tip.message %>
-      </p> -->
+      <% if user_signed_in? %>
+        <h1>aquí va el dashboar</h1>
+        <!-- <p>
+        Tip:
+        <% tips = Tip.all %>
+        <% tip = tips.sample %>
+        <%= tip.title %>:
+        <%= tip.message %>
+        </p> -->
+        <%= column_chart Account.group(:name).count %>
+      <% else %>
+        <p>Take better control of your finances and achieve the savings you so desire!</p>
         <%= image_tag 'credit-card.jpg'  %>
-      <!--<img src='images/credit-card.jpg' alt="tarjeta de credito"> -->
+        <!--<img src='images/credit-card.jpg' alt="tarjeta de credito"> -->
+      </div>
     </div>
-  </div>
+  <% end %>
       <!-- <% if user_signed_in? %>
         <div class="container">
           <div class="row">
