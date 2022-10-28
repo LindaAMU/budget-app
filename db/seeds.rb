@@ -10,6 +10,8 @@ puts "eliminando instancias"
 # Category.destroy_all
 # Transaction.destroy_all
 
+# No usar User.destroy_all
+
 Tip.destroy_all
 
 puts "Creando tips"
