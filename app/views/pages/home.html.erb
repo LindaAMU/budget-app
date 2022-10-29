@@ -10,7 +10,10 @@
         <%= tip.title %>:
         <%= tip.message %>
         </p> -->
-        <%= column_chart Account.group(:name).count %>
+        <div class="bg-light">
+          <%= column_chart Account.group(:name).count %>
+          <%= column_chart Transaction.group(:date).count %>
+        </div>
       <% else %>
         <p>Take better control of your finances and achieve the savings you so desire!</p>
         <%= image_tag 'credit-card.jpg'  %>
