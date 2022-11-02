@@ -3,13 +3,6 @@
     <div class="home-text">
       <% if user_signed_in? %>
         <h1>aquí va el dashboar</h1>
-        <!-- <p>
-        Tip:
-        <% tips = Tip.all %>
-        <% tip = tips.sample %>
-        <%= tip.title %>:
-        <%= tip.message %>
-        </p> -->
         <div class="bg-light">
           <%= column_chart Account.group(:name).count %>
           <%= column_chart Transaction.group(:date).count %>
