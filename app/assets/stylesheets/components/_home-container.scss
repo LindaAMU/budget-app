@@ -5,13 +5,6 @@
 }
 
 .home-text {
-  display: grid;
-  grid-template-columns: 500px;
-  grid-template-rows: 500px;
-  padding: 50px;
-}
-
-.home-text p {
   color: $white;
   font-family: 'Montserrat';
   font-style: normal;
@@ -20,6 +13,9 @@
   line-height: 71px;
 }
 
-.home-text img {
-  justify-content: space-around;
+.home-image img {
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  width: 90%;
 }
