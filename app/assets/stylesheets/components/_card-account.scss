@@ -1,3 +1,8 @@
+.overflow-cards {
+  width: 500px;
+  scrollbar-base-color: aqua;
+}
+
 .card-account-container {
   display: grid;
   grid-template-columns: repeat(4, 230px);

@@ -1,10 +1,12 @@
 <h1><%= @user.full_name %></h1>
-<div class="card-account-container">
-  <% @user.accounts.each do |a| %>
-    <div class="card-account">
-      <%= a.name %>
-      <p>Balance:</p>
-      <%= a.amount %>
-    </div>
-  <% end %>
+<div class="overflow-cards">
+  <div class="card-account-container">
+    <% @user.accounts.each do |a| %>
+      <div class="card-account">
+        <%= a.name %>
+        <p>Balance:</p>
+        <%= a.amount %>
+      </div>
+    <% end %>
+  </div>
 </div>

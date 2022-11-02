@@ -1,6 +1,12 @@
 <div class="container">
   <div class="row justify-content-center p-5">
     <h1 class="mb-5">Your Transactions</h1>
+      <div class="search-container">
+      <%= form_with url: transactions_path, remote: true, method: :get do  %>
+        <%= text_field_tag :query, params[:query] %>
+        <%= submit_tag "submit" %>
+      <% end %>
+      </div>
     <table>
       <thead>
         <tr>
@@ -18,7 +24,7 @@
             <td><%= transaction.reason %></td>
             <td><%= transaction.date %></td>
             <td><%= transaction.amount %></td>
-            <td><%= transaction.account.account_type %></td>
+            <td><%= transaction.account.name %></td>
             <td><%= transaction.category.category_type %></td>
             <td><%= link_to "Edit", edit_transaction_path(transaction) %> or <%= link_to "Delete", transaction_path(transaction), data: { turbo_method: :delete } %></td>
           </tr>

@@ -1,7 +1,13 @@
 class TransactionsController < ApplicationController
   before_action :set_transaction, only: %i[edit update destroy]
   def index
-    @transactions = Transaction.all.where(user_id: current_user.id).order(date: :desc)
+    p "******"
+    p params
+    if params[:query]
+      @transactions = current_user.transactions.search_by_reason(params[:query]).order(date: :desc)
+    else
+      @transactions = current_user.transactions.order(date: :desc)
+    end
   end
 
   def new
