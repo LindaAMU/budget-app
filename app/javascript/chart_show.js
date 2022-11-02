@@ -11,6 +11,8 @@ const chartSelector = document.getElementById("chart-selector")
 chartSelector.addEventListener("change", (event) => {
   console.log("Si detecta el select");
   console.log(event.target.value + " testeando el value");
-  const result = document.querySelector('.result');
-  result.textContent = `You like ${event.target.value}`;
- })
+  if (event.target.value == 'barras') {
+    console.log("has seleccionado " + event.target.value)
+    const chart = document.getElementById("chart-selector")
+  }
+})
