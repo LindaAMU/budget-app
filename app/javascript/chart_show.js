@@ -7,12 +7,37 @@
 //      })
 //   }
 // }
+
+function clearAllCharts() {
+  const barras = document.getElementById("barras-charts");
+  barras.style.display = "none";
+  const otros = document.getElementById("otros-charts");
+  otros.style.display = "none";
+  console.log("clearAllCharts");
+}
+
 const chartSelector = document.getElementById("chart-selector")
 chartSelector.addEventListener("change", (event) => {
   console.log("Si detecta el select");
-  console.log(event.target.value + " testeando el value");
-  if (event.target.value == 'barras') {
-    console.log("has seleccionado " + event.target.value)
-    const chart = document.getElementById("chart-selector")
+
+
+  switch (event.target.value) {
+    case 'barras':
+      clearAllCharts();
+      console.log("has seleccionado " + event.target.value + " usando switch")
+      const barrasMostrar = document.getElementById("barras-charts");
+      barrasMostrar.style.display = "block";
+      console.log("ahora se muestran los graficos de barras")
+      break;
+    case 'otros':
+      clearAllCharts();
+      console.log("has seleccionado " + event.target.value + " usando switch")
+      const otrosMostrar = document.getElementById("otros-charts");
+      otrosMostrar.style.display = "block";
+      console.log("ahora se muestran otros graficos")
+      break;
+    default:
+      clearAllCharts();
+      console.log(`nope`);
   }
 })

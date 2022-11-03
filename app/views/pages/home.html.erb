@@ -24,12 +24,12 @@
           </select>
 
         </div>
-        <div id="barras-charts">
+        <div class="graphics", id="barras-charts">
           <%= column_chart current_user.accounts.group(:name).sum(:amount) %>
           <%= column_chart current_user.transactions.group_by_day(:date).sum(:amount) %>
           <%= bar_chart current_user.accounts.group(:name).sum(:amount), empty: "No data", colors: ["#C5A5CF"], adapter: "google",  library: { backgroundColor: "#2D4054", dataset: {borderWidth: 10, fillColor: "#ffffff"}, vAxis: { baselineColor: "#ffffff", gridlines: {Color: "" }, textStyle: { color: "#ffffff"}, titleTextStyle: {color: "#ffffff"} }, hAxis: { baselineColor: "#ffffff" , gridlines: {Color: "" }, textStyle: { color: "#ffffff"} , titleTextStyle: {color: "#ffffff"} } }  %>
         </div>
-        <div id="otros-charts">
+        <div class="graphics", id="otros-charts">
           <%= line_chart current_user.transactions.group(:account_id).group_by_day(:date).sum(:amount) %>
           <%= pie_chart current_user.transactions.joins(:category).group(:name).sum(:amount), legend: false %>
         </div>
