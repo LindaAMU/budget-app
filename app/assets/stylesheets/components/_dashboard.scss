@@ -11,7 +11,7 @@
 }
 
 .balances {
-  background-color: green;
+  background-color: rgb(255, 0, 157);
   border-radius: 1 solid white;
   height: 500px;
 }
@@ -20,4 +20,13 @@
   background-color: purple;
   border-radius: 1 solid white;
   height: 250px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 95% 5%;
+}
+
+.new-account i{
+  color: white;
 }

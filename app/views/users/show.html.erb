@@ -1,14 +1,22 @@
 <h1><%= @user.full_name %></h1>
-<div class="overflow-cards grid">
-  <div class="card-account-container g-col-12">
-    <% @user.accounts.each do |a| %>
-      <div class="card-account">
-        <%= a.name %>
-        <p>Balance:</p>
-        <%= a.amount %>
-      </div>
+<div class="container ">
+  <div class="overflow-cards grid ">
+    <div class="card-account-container g-col-12">
+      <% @user.accounts.each do |a| %>
+        <div class="card-account">
+          <%= a.name %>
+          <p>Balance:</p>
+          <%= a.amount %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="new-account text-center">
+    <%= link_to new_account_path do %>
+      <i class="fa-solid fa-circle-plus fa-3x" ></i>
     <% end %>
   </div>
+
 </div>
 
 <div class= "dashboard-info row mt-5">
