@@ -12,7 +12,7 @@ class AccountsController < ApplicationController
     @account = Account.new(account_params)
     @account.user = current_user
     if @account.save
-      redirect_to accounts_path
+      redirect_to profile_path(current_user)
     else
       render :new, status: :unprocessable_entity
     end
