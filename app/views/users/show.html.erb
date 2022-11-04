@@ -1,6 +1,6 @@
 <h1><%= @user.full_name %></h1>
-<div class="container ">
-  <div class="overflow-cards grid ">
+<div class="dashboard-container row ">
+  <div class="overflow-cards grid col-8 ">
     <div class="card-account-container g-col-12">
       <% @user.accounts.each do |a| %>
         <div class="card-account">
@@ -11,10 +11,11 @@
       <% end %>
     </div>
   </div>
-  <div class="new-account text-center">
-    <%= link_to new_account_path do %>
-      <i class="fa-solid fa-circle-plus fa-3x" ></i>
-    <% end %>
+  <div class="new-account text-center col-4">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
+        <i class="fa-solid fa-circle-plus fa-3x" ></i>
+    </button>
+    <%= render 'accounts/modal_new' %>
   </div>
 
 </div>
