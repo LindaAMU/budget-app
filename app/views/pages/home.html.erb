@@ -1,9 +1,13 @@
 <div class="banner">
-  <div class="home-container">
-    <div class="home-text">
-      <% if user_signed_in? %>
-        <h1>HOME</h1>
+  <div class="home-container row">
 
+    <div class="home-text col-sm-12 col-lg-6 ">
+      <p>Take better control of your finances and achieve the savings you so desire!</p>
+    </div>
+    <div class= "home-image col-sm-12 col-lg-6">
+      <%= image_tag 'credit-card.jpg'  %>
+    </div>
+      <% if user_signed_in? %>
         <!-- <p>
         Tip:
         <% tips = Tip.all %>
@@ -12,10 +16,6 @@
         <%= tip.message %>
         </p> -->
       <% else %>
-        <p>Take better control of your finances and achieve the savings you so desire!</p>
-        <%= image_tag 'credit-card.jpg'  %>
-        <!--<img src='images/credit-card.jpg' alt="tarjeta de credito"> -->
-      </div>
     </div>
   <% end %>
       <!-- <% if user_signed_in? %>

@@ -9,4 +9,14 @@ class Transaction < ApplicationRecord
   validates :amount, presence: true, numericality: { greater_than: 0 }
   validates :account_id, presence: true
   validates :category_id, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_reason,
+                  against: [:reason],
+                  associated_against: {
+                    account: [:name]
+                  },
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end
