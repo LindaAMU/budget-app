@@ -1,8 +1,6 @@
 class TransactionsController < ApplicationController
   before_action :set_transaction, only: %i[edit update destroy]
   def index
-    p "******"
-    p params
     if params[:query]
       @transactions = current_user.transactions.search_by_reason(params[:query]).order(date: :desc)
     else
@@ -30,10 +28,8 @@ class TransactionsController < ApplicationController
         @sender_account.save
       when "transfer"
         @receiver_account = Account.find(params[:receiver_account_id])
-        p @sender_account
         @sender_account.amount -= @transaction.amount
         @sender_account.save
-        p @sender_account
         @receiver_account.amount += @transaction.amount
         @receiver_account.save
       end
