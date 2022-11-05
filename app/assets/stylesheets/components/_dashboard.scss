@@ -21,6 +21,69 @@
   border-radius: 20px;
 }
 
+.transactions-title {
+  font-size: 24px;
+  margin: 20px;
+}
+
+.transactions-header {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+.search-container {
+  margin: 20px;
+
+  .input-search {
+    border-radius: 8px;
+    background-color: rgba(250, 250, 250, 0.4);
+    color: aliceblue;
+    border: none;
+    padding: 5px;
+  }
+
+  .btn-search {
+    cursor: pointer;
+    margin-left: -38px;
+  }
+
+  ::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+.transactions-new {
+  width: 50px;
+  align-items: center !important;
+  justify-content: center;
+  display: flex;
+}
+
+.transactions-info {
+  overflow: auto;
+  height: 180px;
+  padding: 25px;
+}
+
+.transactions-info::-webkit-scrollbar {
+  width: 8px;
+  padding: 10px;
+}
+
+.transactions-info::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.transactions-info::-webkit-scrollbar-thumb {
+  background: rgba(250, 250, 250, 0.8);
+  border-radius: 10px;
+}
+
+.transactions-info::-webkit-scrollbar-thumb:hover {
+  background: rgba(250, 250, 250, 0.65);
+}
+
 .dashboard-account-container {
   display: grid;
   grid-template-columns: 85% 15%;
@@ -31,7 +94,7 @@
   display: flex;
 }
 
-.new-account i{
+.new-account i, .transactions-new i{
   color: white;
   &:hover {
     color: rgba(250, 250, 250, 0.8);
@@ -46,8 +109,8 @@
 .dashboard-info {
   margin: 50px;
   display: grid;
-  grid-template-columns: 900px 400px;
-  grid-template-rows: 700px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
   grid-gap: 40px;
 }
 

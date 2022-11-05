@@ -1,0 +1,14 @@
+// .modal-content {
+//   background-color: $blue;
+//   width: 900px;
+//   padding: 30px;
+//   border-radius: 20px;
+//   height: 650px;
+//   justify-content: center;
+//   overflow: auto;
+// }
+
+.modal-body-transaction::-webkit-scrollbar {
+  overflow: auto;
+  background-color: $blue;
+}

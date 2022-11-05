@@ -33,15 +33,10 @@ class TransactionsController < ApplicationController
         @receiver_account.amount += @transaction.amount
         @receiver_account.save
       end
-      redirect_to transactions_path
+      redirect_to profile_path(current_user)
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def destroy
-    @transaction.destroy
-    redirect_to categories_path, status: :see_other
   end
 
   def edit
@@ -49,7 +44,12 @@ class TransactionsController < ApplicationController
 
   def update
     @transaction.update(transaction_params)
-    redirect_to categories_path
+    redirect_to profile_path(current_user)
+  end
+
+  def destroy
+    @transaction.destroy
+    redirect_to profile_path(current_user), status: :see_other
   end
 
   private

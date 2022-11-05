@@ -1,4 +1,4 @@
-table {
+.transactions-table {
 //   position: absolute;
 //   z-index: 2;
 //   left: 50%;
@@ -16,27 +16,28 @@ table {
   border-color: white;
  }
 
-thead {
-  background-color: rgba(255, 255, 255, 0.4);
+ .transactions-table thead {
+  background-color: $blue;
+  border-radius: 10px;
   // border-collapse: collapse !important;
 }
 
-td , th{
+.transactions-table td, th{
   padding: 15px 20px;
   text-align: center;
 }
 
-table a {
+.transactions-table a {
   text-decoration: none;
   color: white;
 }
 
-table a:hover {
+.transactions-table a:hover {
   text-decoration: none;
   color: white;
 }
 
-table a:visited {
+.transactions-table a:visited {
   text-decoration: none;
   color: white;
 }
