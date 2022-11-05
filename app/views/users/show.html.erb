@@ -20,10 +20,56 @@
 <div class= "dashboard-info justify-content-center">
   <div class= "chart-transaction">
     <div class= "chart">
-      
-      <%= render "shared/charts" %>
     </div>
-    <div class= "transactions">
+    <div class="transactions">
+      <div class="transactions-header">
+        <h1 class="transactions-title">Your Transactions</h1>
+        <div class="search-container">
+          <%= form_with url: transactions_path, remote: true, method: :get do  %>
+            <%= text_field_tag :query, params[:query], placeholder: "Search", class: "input-search"%>
+            <%= button_tag(type: "submit", class: "btn my-0 my-sm-0 mr-sm-2 btn-search") do %>
+              <i class="fas fa-search text-light"></i>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="transactions-new text-center col-4">
+          <i class="fa-solid fa-circle-plus fa-2x" data-bs-toggle="modal" data-bs-target="#newTransactionModal"></i>
+          <%= render 'transactions/modal_new_transaction', transaction: Transaction.new %>
+        </div>
+      </div>
+      <div class="transactions-info justify-content-center">
+      <table class="transactions-table">
+        <thead>
+          <tr>
+            <td>Reason</td>
+            <td>Date</td>
+            <td>Amount</td>
+            <td>Account</td>
+            <td>Category</td>
+            <td>Action</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% @user.transactions.each do |transaction| %>
+            <tr>
+              <td><%= transaction.reason %></td>
+              <td><%= transaction.date %></td>
+              <td><%= transaction.amount %></td>
+              <td><%= transaction.account.name %></td>
+              <td><%= transaction.category.category_type %></td>
+              <td>
+                <i class="fa-solid fa-pen-to-square text-light" data-bs-toggle="modal" data-bs-target="#editTransactionModal"></i>
+                <%= render 'transactions/modal_edit_transaction', transaction: transaction %>
+                 |
+                <%= link_to transaction_path(transaction), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+                <i class="fa-solid fa-trash text-light"></i>
+                <% end %>
+                </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </div>
     </div>
   </div>
   <div class= "balances">

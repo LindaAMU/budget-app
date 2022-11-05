@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-6 form-container ">
-      <%= simple_form_for @transaction do |f| %>
+  <div class="justify-content-center">
+    <div class="form-container ">
+      <%= simple_form_for transaction do |f| %>
         <%= f.input :transaction_type, placeholder: "Transaction's Type", collection: current_user.transactions.transaction_types.symbolize_keys.keys %>
         <%= f.input :reason, placeholder: "Reason of payment" %>
         <%= f.input :date, placeholder: "Date", html5: true %>
