@@ -1,5 +1,5 @@
 <h1 class="dashboard-title"><%= @user.full_name %></h1>
-<div class="dashboard-account-container row ">
+<div class="dashboard-account-container row justify-content-center">
   <div class="overflow-cards grid col-8 ">
     <div class="card-account-container g-col-12">
       <% @user.accounts.each do |a| %>
@@ -17,9 +17,11 @@
   </div>
 </div>
 
-<div class= "dashboard-info">
+<div class= "dashboard-info justify-content-center">
   <div class= "chart-transaction">
     <div class= "chart">
+      
+      <%= render "shared/charts" %>
     </div>
     <div class= "transactions">
     </div>

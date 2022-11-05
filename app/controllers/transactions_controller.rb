@@ -18,18 +18,26 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.new(transaction_params)
     @transaction.user = current_user
     @transaction.category = Category.find(params[:transaction][:category_id])
-    @account = Account.find(params[:transaction][:account_id])
-    @transaction.account = @account
+    @sender_account = Account.find(params[:sender_account_id])
+    @transaction.account = @sender_account
     if @transaction.save
-      if @transaction.transaction_type == "expense"
-        @account.amount -= @transaction.amount
-        @account.save
-        redirect_to transactions_path
-      elsif @transaction.transaction_type == "income"
-        @account.amount += @transaction.amount
-        @account.save
-        redirect_to transactions_path
+      case @transaction.transaction_type
+      when "expense"
+        @sender_account.amount -= @transaction.amount
+        @sender_account.save
+      when "income"
+        @sender_account.amount += @transaction.amount
+        @sender_account.save
+      when "transfer"
+        @receiver_account = Account.find(params[:receiver_account_id])
+        p @sender_account
+        @sender_account.amount -= @transaction.amount
+        @sender_account.save
+        p @sender_account
+        @receiver_account.amount += @transaction.amount
+        @receiver_account.save
       end
+      redirect_to transactions_path
     else
       render :new, status: :unprocessable_entity
     end
