@@ -26,7 +26,7 @@
             <td><%= transaction.amount %></td>
             <td><%= transaction.account.name %></td>
             <td><%= transaction.category.category_type %></td>
-            <td><%= link_to "Edit", edit_transaction_path(transaction) %> or <%= link_to "Delete", transaction_path(transaction), data: { turbo_method: :delete } %></td>
+            <td><p><%= link_to "Edit", edit_transaction_path(transaction) %> or <%= link_to "Delete", transaction_path(transaction), data: { turbo_method: :delete } %></p></td>
           </tr>
         <% end %>
       </tbody>
