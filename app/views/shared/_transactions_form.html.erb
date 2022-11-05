@@ -6,7 +6,8 @@
         <%= f.input :reason, placeholder: "Reason of payment" %>
         <%= f.input :date, placeholder: "Date", html5: true %>
         <%= f.input :amount, placeholder: "Add Amount" %>
-        <%= f.input :account_id, placeholder: "Select account", collection: current_user.accounts %>
+        <%= f.input :account_id, placeholder: "Select account", collection: current_user.accounts, input_html: { name: 'sender_account_id' } %>
+        <%= f.input :account_id, placeholder: "Select account", collection: current_user.accounts, input_html: { name: 'receiver_account_id' } %>
         <%= f.input :category_id, placeholder: "Select category", collection: current_user.categories %>
         <%= f.button :submit, class: "btn-violet" %>
       <% end %>
