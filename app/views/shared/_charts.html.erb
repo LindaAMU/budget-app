@@ -9,7 +9,7 @@
 </div>
 
 <div id="expenses-by-category" style="display: none">
-  <%= pie_chart current_user.transactions.joins(:category).where(category: {category_type: :expenses}).group(:name).sum(:amount),  library: { backgroundColor: "#2D4054", dataset: {borderWidth: 10, fillColor: "#ffffff"}, vAxis: { baselineColor: "#ffffff", gridlines: {Color: "ffffff" }, textStyle: { color: "#ffffff"}, titleTextStyle: {color: "#ffffff"} }, hAxis: { baselineColor: "#ffffff" , gridlines: {Color: "#ffffff" }, textStyle: { color: "#ffffff"} , titleTextStyle: {color: "#ffffff"} } }  %>
+  <%= pie_chart current_user.transactions.joins(:category).where(category: {category_type: :expenses}).group(:name).sum(:amount), library: { backgroundColor: "#2D4054", dataset: {borderWidth: 10, fillColor: "#ffffff"}, vAxis: { baselineColor: "#ffffff", gridlines: {Color: "ffffff" }, textStyle: { color: "#ffffff"}, titleTextStyle: {color: "#ffffff"} }, hAxis: { baselineColor: "#ffffff" , gridlines: {Color: "#ffffff" }, textStyle: { color: "#ffffff"} , titleTextStyle: {color: "#ffffff"} }, legend: { textStyle: { color: '#ffffff' } } }  %>
 </div>
 <div id="my-accounts" style="display: none">
   <%= column_chart current_user.accounts.group(:name).sum(:amount), library: { backgroundColor: "#2D4054", dataset: {borderWidth: 10, fillColor: "#ffffff"}, vAxis: { baselineColor: "#ffffff", gridlines: {Color: "" }, textStyle: { color: "#ffffff"}, titleTextStyle: {color: "#ffffff"} }, hAxis: { baselineColor: "#ffffff" , gridlines: {Color: "" }, textStyle: { color: "#ffffff"} , titleTextStyle: {color: "#ffffff"} } }  %>
@@ -18,5 +18,5 @@
   <%= column_chart current_user.transactions.group_by_day(:date, last: 7).sum(:amount),  library: { backgroundColor: "#2D4054", dataset: {borderWidth: 10, fillColor: "#ffffff"}, vAxis: { baselineColor: "#ffffff", gridlines: {Color: "" }, textStyle: { color: "#ffffff"}, titleTextStyle: {color: "#ffffff"} }, hAxis: { baselineColor: "#ffffff" , gridlines: {Color: "" }, textStyle: { color: "#ffffff"} , titleTextStyle: {color: "#ffffff"} } }  %>
 </div>
 <div id="last-month" style="display: none">
-  <%= line_chart current_user.transactions.group(:account_id).group_by_day(:date, last: 30).sum(:amount),  library: { backgroundColor: "#2D4054", dataset: {borderWidth: 10, fillColor: "#ffffff"}, vAxis: { baselineColor: "#ffffff", gridlines: {Color: "" }, textStyle: { color: "#ffffff"}, titleTextStyle: {color: "#ffffff"} }, hAxis: { baselineColor: "#ffffff" , gridlines: {Color: "" }, textStyle: { color: "#ffffff"} , titleTextStyle: {color: "#ffffff"} } }  %>
+  <%= line_chart current_user.transactions.group(:account_id).group_by_day(:date, last: 30).sum(:amount),  library: { backgroundColor: "#2D4054", dataset: {borderWidth: 10, fillColor: "#ffffff"}, vAxis: { baselineColor: "#ffffff", gridlines: {Color: "" }, textStyle: { color: "#ffffff"}, titleTextStyle: {color: "#ffffff"} }, hAxis: { baselineColor: "#ffffff" , gridlines: {Color: "" }, textStyle: { color: "#ffffff"} , titleTextStyle: {color: "#ffffff"} }, legend: { textStyle: { color: '#ffffff' } } }  %>
 </div>
