@@ -20,6 +20,7 @@
 <div class= "dashboard-info justify-content-center">
   <div class= "chart-transaction">
     <div class= "chart">
+      <%= render "shared/charts" %>
     </div>
     <div class="transactions">
       <div class="transactions-header">
@@ -75,3 +76,38 @@
   <div class= "balances">
   </div>
 </div>
+
+<script>
+document.getElementById("chart-selector").addEventListener("change", (event) => {
+  console.log("test")
+  const array = ["expenses-by-category", "my-accounts", "last-seven-days", "last-month"]
+  array.forEach(element => {
+    document.getElementById(element).style.display = "none"
+  });
+  switch (event.target.value) {
+    case 'expenses-by-category':
+      // clearAllCharts();
+      const expensesByCategoryMostrar = document.getElementById("expenses-by-category");
+      expensesByCategoryMostrar.style.display = "block";
+
+      break;
+    case 'my-accounts':
+      // clearAllCharts();
+      const myAccountsMostrar = document.getElementById("my-accounts");
+      myAccountsMostrar.style.display = "block";
+      break;
+    case 'last-seven-days':
+      // clearAllCharts();
+      const lastSevenDaysMostrar = document.getElementById("last-seven-days");
+      lastSevenDaysMostrar.style.display = "block";
+      break;
+    case 'last-month':
+      // clearAllCharts();
+      const lastMonthMostrar = document.getElementById("last-month");
+      lastMonthMostrar.style.display = "block";
+      break;
+    default:
+      // clearAllCharts();
+  }
+})
+</script>

@@ -1,43 +1,47 @@
-// import { Controller } from "@hotwired/stimulus"
+// function clearAllCharts() {
+//   const expensesByCategory = document.getElementById("expenses-by-category");
+//   expensesByCategory.style.display = "none";
 
-// export default class extends Controller {
-//   connect(){
-//     document.getElementById("chart-selector").addEventListener("change", (event) => {
-//       console.log("event");
-//      })
-//   }
+//   const myAccounts = document.getElementById("my-accounts");
+//   myAccounts.style.display = "none";
+
+//   const lastSevenDays = document.getElementById("last-seven-days");
+//   lastSevenDays.style.display = "none";
+
+//   const lastMonth = document.getElementById("last-month");
+//   lastMonth.style.display = "none";
 // }
 
-function clearAllCharts() {
-  const barras = document.getElementById("barras-charts");
-  barras.style.display = "none";
-  const otros = document.getElementById("otros-charts");
-  otros.style.display = "none";
-  console.log("clearAllCharts");
-}
+// clearAllCharts();
+// console.log("primer clearAllCharts")
 
-const chartSelector = document.getElementById("chart-selector")
-chartSelector.addEventListener("change", (event) => {
-  console.log("Si detecta el select");
+// const chartSelector = document.getElementById("chart-selector")
+// chartSelector.addEventListener("change", (event) => {
+//   console.log("test")
 
+//   switch (event.target.value) {
+//     case 'expenses-by-category':
+//       clearAllCharts();
+//       const expensesByCategoryMostrar = document.getElementById("expenses-by-category");
+//       expensesByCategoryMostrar.style.display = "block";
 
-  switch (event.target.value) {
-    case 'barras':
-      clearAllCharts();
-      console.log("has seleccionado " + event.target.value + " usando switch")
-      const barrasMostrar = document.getElementById("barras-charts");
-      barrasMostrar.style.display = "block";
-      console.log("ahora se muestran los graficos de barras")
-      break;
-    case 'otros':
-      clearAllCharts();
-      console.log("has seleccionado " + event.target.value + " usando switch")
-      const otrosMostrar = document.getElementById("otros-charts");
-      otrosMostrar.style.display = "block";
-      console.log("ahora se muestran otros graficos")
-      break;
-    default:
-      clearAllCharts();
-      console.log(`nope`);
-  }
-})
+//       break;
+//     case 'my-accounts':
+//       clearAllCharts();
+//       const myAccountsMostrar = document.getElementById("my-accounts");
+//       myAccountsMostrar.style.display = "block";
+//       break;
+//     case 'last-seven-days':
+//       clearAllCharts();
+//       const lastSevenDaysMostrar = document.getElementById("last-seven-days");
+//       lastSevenDaysMostrar.style.display = "block";
+//       break;
+//     case 'last-month':
+//       clearAllCharts();
+//       const lastMonthMostrar = document.getElementById("last-month");
+//       lastMonthMostrar.style.display = "block";
+//       break;
+//     default:
+//       clearAllCharts();
+//   }
+// })

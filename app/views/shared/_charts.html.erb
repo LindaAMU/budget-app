@@ -1,17 +1,22 @@
-  <div>
+<div>
   <select name="select" id="chart-selector">
-    <option selected>Chart Selector</option>
-    <option value="barras">Graficos de barras</option>
-    <option value="otros">otros graficos</option>
+    <option selected value="select-a-chart">Select a chart:</option>
+    <option value="expenses-by-category">expenses-by-category</option>
+    <option value="my-accounts">my-accounts</option>
+    <option value="last-seven-days">last-seven-days</option>
+    <option value="last-month">last-month</option>
   </select>
 </div>
 
-<div class="graphics", id="barras-charts">
-  <%= column_chart current_user.accounts.group(:name).sum(:amount) %>
-  <%= column_chart current_user.transactions.group_by_day(:date).sum(:amount) %>
-  <%= bar_chart current_user.accounts.group(:name).sum(:amount), empty: "No data", colors: ["#C5A5CF"], adapter: "google",  library: { backgroundColor: "#2D4054", dataset: {borderWidth: 10, fillColor: "#ffffff"}, vAxis: { baselineColor: "#ffffff", gridlines: {Color: "" }, textStyle: { color: "#ffffff"}, titleTextStyle: {color: "#ffffff"} }, hAxis: { baselineColor: "#ffffff" , gridlines: {Color: "" }, textStyle: { color: "#ffffff"} , titleTextStyle: {color: "#ffffff"} } }  %>
+<div id="expenses-by-category" style="display: none">
+  <%= pie_chart current_user.transactions.joins(:category).where(category: {category_type: :expenses}).group(:name).sum(:amount), library: { backgroundColor: "#2D4054", dataset: {borderWidth: 10, fillColor: "#ffffff"}, vAxis: { baselineColor: "#ffffff", gridlines: {Color: "ffffff" }, textStyle: { color: "#ffffff"}, titleTextStyle: {color: "#ffffff"} }, hAxis: { baselineColor: "#ffffff" , gridlines: {Color: "#ffffff" }, textStyle: { color: "#ffffff"} , titleTextStyle: {color: "#ffffff"} }, legend: { textStyle: { color: '#ffffff' } } }  %>
 </div>
-<div class="graphics", id="otros-charts">
-  <%= line_chart current_user.transactions.group(:account_id).group_by_day(:date).sum(:amount) %>
-  <%= pie_chart current_user.transactions.joins(:category).group(:name).sum(:amount), legend: false %>
+<div id="my-accounts" style="display: none">
+  <%= column_chart current_user.accounts.group(:name).sum(:amount), library: { backgroundColor: "#2D4054", dataset: {borderWidth: 10, fillColor: "#ffffff"}, vAxis: { baselineColor: "#ffffff", gridlines: {Color: "" }, textStyle: { color: "#ffffff"}, titleTextStyle: {color: "#ffffff"} }, hAxis: { baselineColor: "#ffffff" , gridlines: {Color: "" }, textStyle: { color: "#ffffff"} , titleTextStyle: {color: "#ffffff"} } }  %>
+</div>
+<div id="last-seven-days" style="display: none">
+  <%= column_chart current_user.transactions.group_by_day(:date, last: 7).sum(:amount),  library: { backgroundColor: "#2D4054", dataset: {borderWidth: 10, fillColor: "#ffffff"}, vAxis: { baselineColor: "#ffffff", gridlines: {Color: "" }, textStyle: { color: "#ffffff"}, titleTextStyle: {color: "#ffffff"} }, hAxis: { baselineColor: "#ffffff" , gridlines: {Color: "" }, textStyle: { color: "#ffffff"} , titleTextStyle: {color: "#ffffff"} } }  %>
+</div>
+<div id="last-month" style="display: none">
+  <%= line_chart current_user.transactions.group(:account_id).group_by_day(:date, last: 30).sum(:amount),  library: { backgroundColor: "#2D4054", dataset: {borderWidth: 10, fillColor: "#ffffff"}, vAxis: { baselineColor: "#ffffff", gridlines: {Color: "" }, textStyle: { color: "#ffffff"}, titleTextStyle: {color: "#ffffff"} }, hAxis: { baselineColor: "#ffffff" , gridlines: {Color: "" }, textStyle: { color: "#ffffff"} , titleTextStyle: {color: "#ffffff"} }, legend: { textStyle: { color: '#ffffff' } } }  %>
 </div>
