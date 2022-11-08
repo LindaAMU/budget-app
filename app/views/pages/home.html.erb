@@ -5,7 +5,21 @@
       <p>Take better control of your finances and achieve the savings you so desire!</p>
     </div>
     <div class= "home-image col-sm-12 col-lg-6">
-      <%= image_tag 'credit-card.jpg'  %>
+      <div class="circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+      </div>
+
+      <div class="card-group">
+        <div class="card">
+          <div class="visa-logo"><img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="visa-logo"></div>
+          <div class="card-chip"><img src="https://cdn-icons-png.flaticon.com/512/3877/3877368.png" alt="chip"></div>
+          <div class="number">1234 5678 0987 2354</div>
+          <div class="name">Mateo Soto A</div>
+          <div class="to">03/23</div>
+          <div class="ring"></div>
+        </div>
+      </div>
     </div>
       <% if user_signed_in? %>
         <!-- <p>
