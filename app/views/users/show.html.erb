@@ -74,6 +74,23 @@
     </div>
   </div>
   <div class= "balances">
+    <div class="card-account balance">
+      <% total_incomes = 0 %>
+      <% Transaction.all.where(user_id: current_user.id, transaction_type: 0).each { |transaction| total_incomes += transaction.amount }  %>
+      <p>Total Incomes:</p>
+      <%= total_incomes %>
+    </div>
+
+    <div class="card-account balance">
+      <% total_expense = 0 %>
+      <% Transaction.all.where(user_id: current_user.id, transaction_type: 1).each { |transaction| total_expense += transaction.amount }  %>
+      <p>Total Expenses:</p>
+      <%= total_expense %>
+    </div>
+
+    <div class="card-account balance">
+      <p>Available:</p> <%= total_incomes - total_expense %>
+    </div>
   </div>
 </div>
 
