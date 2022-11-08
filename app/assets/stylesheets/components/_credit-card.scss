@@ -1,0 +1,125 @@
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(#006db3, #29b6f6);
+}
+
+.circles {
+  position: absolute;
+  height: 270px;
+  width: 450px;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+}
+
+.circle-1 {
+  height: 180px;
+  width: 180px;
+  top: -50px;
+  left: -90px;
+}
+
+.circle-2 {
+  height: 200px;
+  width: 200px;
+  bottom: -90px;
+  right: -30px;
+  opacity: 0.8;
+}
+
+.card-group {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+}
+
+.card {
+  position: relative;
+  height: 270px;
+  width: 450px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.visa-logo img,
+.card-chip img,
+.number,
+.name,
+.from,
+.to,
+.ring {
+  position: absolute;
+}
+
+.visa-logo img {
+  top: 35px;
+  right: 40px;
+  width: 80px;
+  height: auto;
+  opacity: 0.8;
+}
+
+.card-chip img {
+  top: 120px;
+  left: 40px;
+  width: 50px;
+  height: auto;
+  opacity: 0.8;
+  color: white;
+}
+
+.number,
+.name,
+.to {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+}
+
+.number {
+  left: 40px;
+  bottom: 65px;
+  font-family: "Nunito", sans-serif;
+}
+
+.name {
+  font-size: 1rem;
+  left: 40px;
+  bottom: 35px;
+}
+
+.to {
+  font-size: 1rem;
+  bottom: 35px;
+  right: 40px;
+}
+
+.ring {
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  background: transparent;
+  border: 50px solid rgba(255, 255, 255, 0.1);
+  bottom: -200px;
+  right: -200px;
+  box-sizing: border-box;
+}
+
+.ring::after {
+  content: "";
+  position: absolute;
+  height: 600px;
+  width: 600px;
+  border-radius: 50%;
+  background: transparent;
+  border: 30px solid rgba(255, 255, 255, 0.1);
+  bottom: -110px;
+  box-sizing: border-box;
+}
