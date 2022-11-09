@@ -2,10 +2,16 @@
   color: white;
   border: 0px;
   margin: 0 auto;
+  column-gap: 40px;
+  width: 700px;
 }
 .category-table td, th{
   padding: 15px 20px;
   text-align: center;
+}
+
+.category-table thead {
+  font-weight: bolder;
 }
 
 .category-table-container{
