@@ -22,51 +22,10 @@
       </div>
     </div>
       <% if user_signed_in? %>
-        <!-- <p>
-        Tip:
-        <% tips = Tip.all %>
-        <% tip = tips.sample %>
-        <%= tip.title %>:
-        <%= tip.message %>
-        </p> -->
+        <div class="new-account text-center col-4" >
+          <%= render 'modal_tips'  %>
+        </div>
       <% else %>
     </div>
   <% end %>
-      <!-- <% if user_signed_in? %>
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              Suma de todos los incomes:
-              <% total_incomes = 0 %>
-              <% Transaction.all.where(user_id: current_user.id, transaction_type: 0).each { |transaction| total_incomes += transaction.amount }  %>
-              <%= total_incomes %>
-
-            </div>
-            <div class="col">
-              Suma de todos los expense:
-              <% total_expense = 0 %>
-              <% Transaction.all.where(user_id: current_user.id, transaction_type: 1).each { |transaction| total_expense += transaction.amount }  %>
-              <%= total_expense %>
-            </div>
-            <div class="col">
-              Disponible: <%= total_incomes - total_expense %>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              Imagen 5
-            </div>
-            <div class="col">
-              Imagen 6
-            </div>
-            <div class="col">
-            Tip:
-          </div>
-          </div>
-        </div>
-      <% else %>
-        <h2>Inicie Sesión o Registrese</h2>
-      <% end %>
-    </div>
-  </div> -->
 </div>

@@ -1,24 +1,32 @@
 <div class="container">
   <div class="row justify-content-center">
     <h1 class="m-5">Your Categories</h1>
-    <table>
-      <thead>
-        <tr>
-          <td>Name</td>
-          <td>Type</td>
-          <td>Action</td>
-        </tr>
-      </thead>
-      <tbody>
-        <% @categories.each do |category| %>
+    <div class="category-table-container">
+      <table class="category-table">
+        <thead>
           <tr>
-            <td><%= category.name %></td>
-            <td><%= category.category_type %></td>
-            <td><%= link_to "Edit", edit_category_path(category) %> or <%= link_to "Delete", category_path(category), data: { turbo_method: :delete } %></td>
+            <td>Name</td>
+            <td>Type</td>
+            <td>Action</td>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <% @categories.each do |category| %>
+            <tr>
+              <td><%= category.name %></td>
+              <td><%= category.category_type %></td>
+              <td><%= link_to edit_category_path(category) do %>
+                <i class="fa-solid fa-pen-to-square text-light"></i>
+              <% end %>
+              | <%= link_to category_path(category), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+                <i class="fa-solid fa-trash text-light"></i>
+              <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
     <div class="row justify-content-center p-1">
       <div class="d-flex justify-content-center">
         <%= button_to "New category", new_category_path, class:"btn-violet", method: :get %>
