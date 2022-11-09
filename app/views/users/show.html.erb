@@ -1,4 +1,5 @@
-<h1 class="dashboard-title"><%= @user.full_name %></h1>
+<h1 class="dashboard-title">Welcome! <%= @user.full_name %>.</h1>
+<h4 class="dashboard-subtitle">This is your financial summary.</h4>
 <div class="dashboard-account-container row justify-content-center">
   <div class="overflow-cards grid col-8 ">
     <div class="card-account-container g-col-12">
@@ -74,21 +75,21 @@
     </div>
   </div>
   <div class= "balances">
-    <div class="card-account balance">
+    <div class="card-account balance" id="incomes">
       <% total_incomes = 0 %>
       <% Transaction.all.where(user_id: current_user.id, transaction_type: 0).each { |transaction| total_incomes += transaction.amount }  %>
       <p>Total Incomes:</p>
       <%= total_incomes %>
     </div>
 
-    <div class="card-account balance">
+    <div class="card-account balance" id="expenses">
       <% total_expense = 0 %>
       <% Transaction.all.where(user_id: current_user.id, transaction_type: 1).each { |transaction| total_expense += transaction.amount }  %>
       <p>Total Expenses:</p>
       <%= total_expense %>
     </div>
 
-    <div class="card-account balance">
+    <div class="card-account balance" id="available">
       <p>Available:</p> <%= total_incomes - total_expense %>
     </div>
   </div>
