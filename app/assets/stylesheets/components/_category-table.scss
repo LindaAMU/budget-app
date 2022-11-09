@@ -1,0 +1,16 @@
+.category-table{
+  color: white;
+  border: 0px;
+  margin: 0 auto;
+}
+.category-table td, th{
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.category-table-container{
+  border-radius: 20px;
+  border: 1px solid white;
+  width: 800px;
+  background-color: $blue;
+}
