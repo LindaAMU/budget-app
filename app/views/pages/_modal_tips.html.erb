@@ -1,0 +1,29 @@
+<div class="modal fade" id="tipModal" tabindex="-1" aria-labelledby="tipModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="height:300px;" >
+      <div class="modal-header">
+        <h5 class="modal-title" id="tipModalLabel">Financial Tips</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5>
+          <%= @financial_tip.title %>
+        </h5>
+        <p>
+          <%= @financial_tip.message  %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<!-- BS JavaScript -->
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<!-- Have fun using Bootstrap JS -->
+<script type="text/javascript">
+$(window).load(function() {
+    $('#tipModal').modal('show');
+});
+</script>
