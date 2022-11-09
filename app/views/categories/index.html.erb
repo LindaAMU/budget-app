@@ -29,7 +29,10 @@
     </div>
     <div class="row justify-content-center p-1">
       <div class="d-flex justify-content-center">
-        <%= button_to "New category", new_category_path, class:"btn-violet", method: :get %>
+        <%= render 'modal_new' %>
+        <button class="btn-violet" data-bs-toggle="modal" data-bs-target="#newCategoryModal">
+          New Category
+        </button>
       </div>
   </div>
 </div>

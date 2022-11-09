@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-5 form-container">
-      <%= simple_form_for @category do |f| %>
+    <div class="form-container">
+      <%= simple_form_for Category.new do |f| %>
         <%= f.input :name, placeholder: "Add the category's name" %>
         <%= f.input :category_type, placeholder: "Is an expenses or an income?", collection: Category.category_types.symbolize_keys.keys%>
         <%= f.button :submit, "Create Category", class: "btn-violet" %>
