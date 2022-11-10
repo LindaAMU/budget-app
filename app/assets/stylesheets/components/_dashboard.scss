@@ -136,7 +136,22 @@
   background: #7F8A96;
 }
 
-.chars-container {
+#expenses-by-category, #my-accounts, #last-seven-days, #last-month {
+  margin-bottom: 20px;
+}
+
+.select-container {
+  margin: 20px;
+  position: relative;
+  left: 500px;
+
+  .input-select {
+    border-radius: 8px;
+    background-color: rgba(250, 250, 250, 0.4);
+    color: aliceblue;
+    border: none;
+    padding: 5px;
+  }
 
 }
 
@@ -144,4 +159,3 @@
   margin-right: 5%;
   margin-left: 5%;
 }
-
