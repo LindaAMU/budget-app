@@ -145,9 +145,11 @@
 }
 
 .select-container {
-  margin: 20px;
-  position: relative;
-  left: 500px;
+  display: flex;
+  // flex-direction: row-reverse;
+  justify-content: end;
+  margin: 40px;
+  margin-right: 100px;
 
   .input-select {
     border-radius: 8px;
