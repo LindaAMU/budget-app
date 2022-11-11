@@ -140,6 +140,27 @@
   background: #7F8A96;
 }
 
+#expenses-by-category, #my-accounts, #last-seven-days, #last-month {
+  margin-bottom: 20px;
+}
+
+.select-container {
+  display: flex;
+  // flex-direction: row-reverse;
+  justify-content: end;
+  margin: 40px;
+  margin-right: 100px;
+
+  .input-select {
+    border-radius: 8px;
+    background-color: rgba(250, 250, 250, 0.4);
+    color: aliceblue;
+    border: none;
+    padding: 5px;
+  }
+
+}
+
 .chart-element {
   margin-right: 5%;
   margin-left: 5%;
