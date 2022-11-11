@@ -91,7 +91,7 @@
     </div>
 
     <div class="card-account balance" id="available">
-      <p>Available:</p> <%= total_incomes - total_expense %>
+      <p>Available:</p> <%= current_user.accounts.sum(:amount) %>
     </div>
   </div>
 </div>
