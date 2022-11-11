@@ -4,12 +4,11 @@
     <div class="home-text col-sm-12 col-lg-6 ">
       <p>Take better control of your finances and achieve the savings you so desire!</p>
     </div>
-    <div class= "home-image col-sm-12 col-lg-6">
+    <div class="home-image">
       <div class="circles">
         <div class="circle circle-1"></div>
         <div class="circle circle-2"></div>
       </div>
-
       <div class="card-group">
         <div class="card">
           <div class="visa-logo"><img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="visa-logo"></div>
@@ -21,11 +20,10 @@
         </div>
       </div>
     </div>
-      <% if user_signed_in? %>
-        <div class="new-account text-center col-4" >
-          <%= render 'modal_tips'  %>
-        </div>
-      <% else %>
-    </div>
-  <% end %>
+    <% if user_signed_in? %>
+      <div class="new-account text-center col-4">
+        <%= render 'modal_tips' %>
+      </div>
+    <% end %>
+  </div>
 </div>

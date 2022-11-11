@@ -1,6 +1,5 @@
 .home-container {
   background-color: $blue;
-  min-height: 100vh;
   padding: 50px;
 }
 
@@ -11,10 +10,12 @@
   font-weight: 700;
   font-size: 58px;
   line-height: 71px;
+  margin-top: 60px;
+  margin-left: 20px;
 }
 
 .home-image {
   font-family: "Josefin Sans", sans-serif;
-  height: 700px;
-  width: 700px;
+  height: 0;
+  overflow: visible;
 }

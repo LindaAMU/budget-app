@@ -9,16 +9,17 @@
     <%= csp_meta_tag %>
     <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
-    <%= render "shared/navbar" %>
-    <%# <%= render "shared/banner" %>
-    <%= render "shared/flashes" %>
-    <div>
-      <%= yield %>
-    </div>
-    <%= render "shared/footer" %>
+  <body class="d-flex flex-column">
+      <%= render "shared/navbar" %>
+      <%# <%= render "shared/banner" %>
+      <%= render "shared/flashes" %>
+      <div>
+        <%= yield %>
+      </div>
+      <%= render "shared/footer" %>
   </body>
 </html>
