@@ -60,6 +60,7 @@
               <td><%= transaction.account.name %></td>
               <td><%= transaction.category.category_type %></td>
               <td>
+
                 <i class="fa-solid fa-pen-to-square text-light" data-bs-toggle="modal" data-bs-target="#editTransactionModal"></i>
                 <%= render 'transactions/modal_edit_transaction', transaction: transaction %>
                  |

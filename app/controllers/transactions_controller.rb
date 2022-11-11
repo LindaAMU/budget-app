@@ -20,13 +20,13 @@ class TransactionsController < ApplicationController
     @transaction.account = @sender_account
     if @transaction.save
       case @transaction.transaction_type
-      when "expense"
+      when "Expense"
         @sender_account.amount -= @transaction.amount
         @sender_account.save
-      when "income"
+      when "Income"
         @sender_account.amount += @transaction.amount
         @sender_account.save
-      when "transfer"
+      when "Transfer"
         @receiver_account = Account.find(params[:receiver_account_id])
         @sender_account.amount -= @transaction.amount
         @sender_account.save
